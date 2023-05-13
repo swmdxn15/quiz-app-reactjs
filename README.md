@@ -8,10 +8,14 @@ This is a simple React web application that provides a daily MS Excel quiz for u
 * QuizAttemptScreen: This screen displays the current question and a list of possible answers. Users can select one answer and proceed to the next question until the end of the quiz. A timer also shows the remaining time for the quiz.
 
 * QuizResultScreen: This screen displays the user's score and the time taken to complete the quiz. It also provides a button to restart the quiz.
-* 
+
 # Screenshots
-<img width="1440" alt="Screenshot 2023-05-13 at 2 33 11 PM" src="https://github.com/swmdxn15/quiz-app-reactjs/![Uploading Screenshot 2023-05-13 at 2.33.22 PM.png…]()
-assets/86848961/f73a02f0-e4a9-46fb-b4d8-fa2ed8c2d3ad">
+<img width="1440" alt="Screenshot 2023-05-13 at 2 33 11 PM" src="https://github.com/swmdxn15/quiz-app-reactjs/assets/86848961/8b4a652e-c7dd-46cb-8ce7-4ec58d0bc803">
+
+
+<img width="1440" alt="Screenshot 2023-05-13 at 2 34 07 PM" src="https://github.com/swmdxn15/quiz-app-reactjs/assets/86848961/45b77423-1421-4e54-836f-a869e833a775">
+<img width="1440" alt="Screenshot 2023-05-13 at 2 33 22 PM" src="https://github.com/swmdxn15/quiz-app-reactjs/assets/86848961/7d8ace32-b612-4488-919f-1b87b36c197f">
+
 
 
 # Getting Started
