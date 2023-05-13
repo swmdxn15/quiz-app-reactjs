@@ -1,44 +1,45 @@
 import React, { useState } from "react";
-import "./index.css";
-import QuizDetailScreen from "./QuizDetailScreen";
 import QuizAttemptScreen from "./QuizAttemptScreen";
 import QuizResultScreen from "./QuizResultScreen";
 
-const App = () => {
+const QuizDetailScreen = () => {
   const [quizStarted, setQuizStarted] = useState(false);
   const [quizCompleted, setQuizCompleted] = useState(false);
   const [quizStartTime, setQuizStartTime] = useState(null);
-  const [quizResult, setQuizResult] = useState({ score: 0, timeTaken: 0 });
 
   const startQuiz = () => {
     setQuizStarted(true);
     setQuizStartTime(new Date());
   };
 
-  const finishQuiz = (score, timeTaken) => {
-    setQuizStarted(false);
+  const completeQuiz = () => {
     setQuizCompleted(true);
-    setQuizResult({ score, timeTaken });
   };
 
   const restartQuiz = () => {
+    setQuizStarted(false);
     setQuizCompleted(false);
-    setQuizResult({ score: 0, timeTaken: 0 });
+    setQuizStartTime(null);
   };
 
   return (
-    <div className="app">
+    <div className="quiz-detail-screen">
+      <h1>Daily MS Excel Quiz!</h1>
+
       {!quizStarted && !quizCompleted && (
-        <QuizDetailScreen onStart={startQuiz} />
+        <button onClick={startQuiz}>Start Quiz</button>
       )}
       {quizStarted && !quizCompleted && (
-        <QuizAttemptScreen onFinish={finishQuiz} />
+        <QuizAttemptScreen onComplete={completeQuiz} />
       )}
-      {!quizStarted && quizCompleted && (
-        <QuizResultScreen quizResult={quizResult} onRestart={restartQuiz} />
+      {quizCompleted && (
+        <QuizResultScreen
+          quizStartTime={quizStartTime}
+          onRestart={restartQuiz}
+        />
       )}
     </div>
   );
 };
 
-export default App;
+export default QuizDetailScreen;
